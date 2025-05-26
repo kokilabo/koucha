@@ -1,7 +1,7 @@
 ---
 title: 'first post'
 date: 2025-05-27T01:03:53+09:00
-draft: true
+draft: false
 image: ''
 categories:
   - 報告
