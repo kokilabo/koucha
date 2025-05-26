@@ -1,6 +1,6 @@
 ---
-title: Example Category
-description: A description of this category
+title: 報告
+description:
 image:
 
 # Badge style
