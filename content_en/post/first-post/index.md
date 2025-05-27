@@ -1,5 +1,5 @@
 ---
-title: 'Hello'
+title: 'First Post'
 date: 2025-05-27T10:31:55+09:00
 draft: false
 image: ''
@@ -9,8 +9,6 @@ tags:
   - 
 ---
 
-## First Post
+## nice to meet you
 
 I tried making a blog using hugo
-
-This is my first post
