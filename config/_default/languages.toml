@@ -2,5 +2,11 @@
 [ja]
 languageName = "日本語"
 languagedirection = "ltr"
-title = "Example Site"
+title = "Koucha"
 weight = 1
+
+[en]
+languageName = "English"
+languagedirection = "ltr"
+title = "Koucha"
+weight = 2
