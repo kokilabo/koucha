@@ -17,6 +17,8 @@ lastUpdated = "2006-01-02T15:04:05Z07:00"
 emoji = ""
 subtitle = "技術メモ、報告"
 
+
+
 [sidebar.avatar]
 enabled = true
 local = true
