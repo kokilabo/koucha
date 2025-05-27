@@ -9,11 +9,20 @@ menu:
             icon: user
 ---
 
-## Introduction
+## About Me
+Hi, I'm Koucha (Koki).  
+I'm a self-taught tech enthusiast who enjoys learning by building and experimenting.
 
-A self-motivated learner who enjoys studying technology independently.
+## Profile
+- **Name**: Koucha / Koki
+- **Hobbies**: Walking, reading, exploring tech onlinet
 
-Sharing records of learning, technical notes, and experiment logs.
+---
+
+# Interests
+
+- Web development  
+- Web/Web3 security
 
 ---
 
@@ -22,13 +31,6 @@ Sharing records of learning, technical notes, and experiment logs.
 - **OS**: Linux (2022–2024), macOS (2024–present)
 - **Programming Languages**: Python, C++, JavaScript (learning), Solidity (learning)
 - **Tools**: Git, GitHub, Docker, Burp Suite
-
----
-
-## Interests
-
-- Web development  
-- Web/Web3 security
 
 ---
 
