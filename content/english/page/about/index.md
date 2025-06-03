@@ -23,6 +23,7 @@ I'm a self-taught tech enthusiast who enjoys learning by building and experiment
 
 - Web development  
 - Web/Web3 security
+- LLM (Large Language Model)
 
 ---
 
@@ -36,8 +37,7 @@ I'm a self-taught tech enthusiast who enjoys learning by building and experiment
 
 ## Future Goals & Plans
 
-- Challenge bug bounty programs by reporting bugs with PoC  
-- Acquire practical skills in smart contract auditing
+- Reporting a Bug
 
 ---
 
