@@ -22,22 +22,22 @@ menu:
 
 ## 興味関心
 
+- webセキュリティ
 - web開発
-- セキュリティ（web,web3）
-- LLM
+- AIエンジニアリング（LLM活用）
 
 ---
 ## 技術スタック・使用環境
 
 - **OS**: Linux（2022〜2024）, macOS（2024〜現在）
-- **言語経験**: Python, C++, JavaScript (学習中), Solidity (学習中)
+- **言語経験**: Python, C++, JavaScript
 - **ツール類**: Git, GitHub, Docker, burp suite
 
 ---
 
 ## 今後やりたいこと、方針など
 
-- バグ報告
+- バグバウンディプラットフォームでの脆弱性報告
 
 ---
 

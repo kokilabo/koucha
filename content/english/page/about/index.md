@@ -21,9 +21,9 @@ I'm a self-taught tech enthusiast who enjoys learning by building and experiment
 
 # Interests
 
-- Web development  
-- Web/Web3 security
-- LLM (Large Language Model)
+- Web Security
+- Web Development
+-	AI Engineering (leveraging LLMs)
 
 ---
 
@@ -37,7 +37,7 @@ I'm a self-taught tech enthusiast who enjoys learning by building and experiment
 
 ## Future Goals & Plans
 
-- Reporting a Bug
+- Reporting vulnerabilities on bug bounty platforms
 
 ---
 
