@@ -6,7 +6,7 @@ image: ''
 categories:
   - 
 tags:
-  - 
+  - メモ
 ---
 
 ※これは個人メモです
