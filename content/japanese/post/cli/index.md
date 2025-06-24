@@ -1,5 +1,5 @@
 ---
-title: 'Cliドキュメント'
+title: 'CLIドキュメント'
 date: 2025-06-25T01:22:01+09:00
 draft: false
 image: ''
