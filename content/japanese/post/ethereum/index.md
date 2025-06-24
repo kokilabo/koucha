@@ -1,5 +1,5 @@
 ---
-title: 'Ethereumとその他周辺技術についてのメモ'
+title: 'Ethereumとその他周辺技術・概念についてのメモ'
 date: 2025-06-03T00:46:19+09:00
 draft: false
 image: ''
