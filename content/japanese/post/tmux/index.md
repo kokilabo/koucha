@@ -11,8 +11,6 @@ tags:
 
 ※これは個人的なメモです
 
-設定ファイルを変更しており、デフォルトのプレフィックスではないため記述内容は多少異なります。
-
 ## 概要
 tmuxについてのメモです。
 
@@ -47,19 +45,19 @@ tmux new -s session-name
 ## ウィンドウ操作
 ```bash
 # 新しいウィンドウを作成
-Ctrl + a → c
+<prefix> → c
 
 # 次のウィンドウへ
-Ctrl + a → n
+<prefix> → n
 
 # 前のウィンドウへ
-Ctrl + a → p
+<prefix> → p
 
 # ウィンドウ番号で直接移動
-Ctrl + a → 0〜9
+<prefix> → 0〜9
 
 # ウィンドウの名前を変更
-Ctrl + a → ,
+<prefix> → ,
 
 
 ```
@@ -68,16 +66,16 @@ Ctrl + a → ,
 ## 画面分割とその他関連操作
 ```bash
 #横に分割（上下に並べる）
-Ctrl + a → "
+<prefix> → "
 
 #縦に分割（左右に並べる）
-Ctrl + a → %
+<prefix> → %
 
 #その方向にあるペインへ移動
-Ctrl + a → ↑
-Ctrl + a → ↓
-Ctrl + a → ←
-Ctrl + a → →
+<prefix> → ↑
+<prefix> → ↓
+<prefix> → ←
+<prefix> → →
 ```
 
 ## tmux設定の再読み込み（.tmux.conf を変更したとき）
@@ -90,7 +88,7 @@ tmux source-file ~/.tmux.conf
 1. コピー（スクロール）モードに入る
 ```bash
 #これで「コピー（閲覧）モード」に入ります
-Ctrl + b → [
+<prefix> → [
 ```
 2. カーソル移動して選択開始
 ↑ ↓ ← → で移動
@@ -105,3 +103,16 @@ Vimスタイルなら h, j, k, l でも移動
 4. Enterでコピー完了
 範囲選択が終わったら Enter。
 これで tmuxのバッファにコピーされます。
+
+## プラグイン
+
+使用しているプラグイン（現時点）
+
+###　Extrakto
+
+Extrakto は、tmux内の画面出力から文字列（URL、パスなど）を抽出し、fzf による選択インターフェースを通じて、コピー・実行などの操作を行う
+
+```bash
+#Extraktoを起動（デフォルト）
+<prefix> + Tab
+```
