@@ -4,7 +4,7 @@ date: 2025-06-25T01:22:01+09:00
 draft: false
 image: ''
 categories:
-  - 
+  -
 tags:
   - メモ
 ---
@@ -46,4 +46,47 @@ fd .txt
 #以下のようにオプションをfdの直後に配置してもいける
 fd [OPTIONS] [PATTERN] [PATH]
 
+```
+
+## fzf
+
+### 基礎
+
+```bash
+# リストから選択
+cat list.txt | fzf
+
+# コマンド履歴から選ぶ
+history | fzf
+
+# Git 管理下のファイルを検索
+git ls-files | fzf
+
+# プロセスから選択
+ps aux | fzf
+```
+
+### キーバインド一覧
+- `Ctrl + T`：ファイル選択 → コマンドラインにパスを挿入
+- `Ctrl + R`：履歴検索 → コマンドを貼り付け
+- `Alt + C`：ディレクトリ選択 → `cd` で移動
+
+
+### 応用：fd を使った Ctrl+T カスタム
+```sh
+# `~/.zshrc` に追加
+export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git'
+```
+
+- `Ctrl + T` で `.git` を除く全ファイルを `fzf` で選べる
+- 隠しファイル（.dotfiles）も対象に
+- `fd` を使うことで高速な検索が可能
+
+### 使用例
+```sh
+vim [Ctrl + T] → ファイル選択 → Vimで開く
+
+cp [Ctrl + T] → コピー元のファイルを選択
+
+mv [Ctrl + T] → 移動元のファイルを選択
 ```
