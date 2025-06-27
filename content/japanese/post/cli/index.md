@@ -90,3 +90,25 @@ cp [Ctrl + T] → コピー元のファイルを選択
 
 mv [Ctrl + T] → 移動元のファイルを選択
 ```
+
+## neovim
+個人的に多用しているキーバインドや特定のプラグインの用途に限定、それ以外は他のサイトを参照
+
+### telescope.nvim — Fuzzy Finder
+
+| よく使うピッカー | コマンド例 | 説明 |
+|-----------------|-----------|------|
+|ファイル検索|`:Telescope find_files`|Git 管理下のみの場合は `hidden=true` に|
+|ライブ Grep|`:Telescope live_grep`|ripgrep 必須 (`brew install ripgrep`)|
+|バッファ一覧|`:Telescope buffers`|開いているバッファを切替|
+|ヘルプタグ|`:Telescope help_tags`|Neovim ヘルプを全文検索|
+
+### キー操作 (Insert モード)
+
+| キー | 動作 |
+|------|------|
+|`<Esc>`|プレビューを閉じて即終了|
+|`<C-u>` / `<C-d>`|プレビューウィンドウのスクロール|
+
+> プロジェクトごとに頻繁に使うピッカーは `<leader>f` 系にマッピングすると便利。
+
