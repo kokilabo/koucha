@@ -94,41 +94,121 @@ mv [Ctrl + T] → 移動元のファイルを選択
 ## neovim
 個人的に多用しているキーバインドや特定のプラグインの用途に限定、それ以外は他のサイトを参照
 
-### telescope.nvim — Fuzzy Finder
+> Treesitter · Telescope · LSP/Lint/Format · nvim-cmp/LuaSnip
 
-| よく使うピッカー | コマンド例 | 説明 |
-|-----------------|-----------|------|
-|ファイル検索|`:Telescope find_files`|Git 管理下のみの場合は `hidden=true` に|
-|ライブ Grep|`:Telescope live_grep`|ripgrep 必須 (`brew install ripgrep`)|
-|バッファ一覧|`:Telescope buffers`|開いているバッファを切替|
-|ヘルプタグ|`:Telescope help_tags`|Neovim ヘルプを全文検索|
+### 1. nvim-treesitter — 構文解析とコード操作
 
-### キー操作 (Insert モード)
+| 機能 | コマンド / キー | 説明 |
+|------|----------------|------|
+|パーサ状態確認|`:TSInstallInfo`|言語ごとのインストール状況|
+|パーサ追加/更新|`:TSInstall <lang>` / `:TSUpdate`|同期版は `*Sync`|
+|増分選択|`gnn` → `grn / grm / grc`|ノード拡張 / 縮小 / スコープ|
+|テキストオブジェクト|例 `af` (関数)|`treesitter-textobjects` が提供|
+|折り畳み|`set foldmethod=expr` +<br>`foldexpr=nvim_treesitter#foldexpr()`|AST 折り畳み|
+
+---
+
+### 2. telescope.nvim — Fuzzy Finder
+
+| ピッカー | コマンド | 備考 |
+|----------|---------|------|
+|ファイル検索|`:Telescope find_files`|Git 管理下のみなら `hidden=true`|
+|ライブ Grep|`:Telescope live_grep`|`ripgrep` 必要|
+|バッファ一覧|`:Telescope buffers`|開いているバッファ切替|
+|ヘルプ検索|`:Telescope help_tags`|Neovim ヘルプ全文検索|
+
+**Insert モード操作**
 
 | キー | 動作 |
 |------|------|
-|`<Esc>`|プレビューを閉じて即終了|
-|`<C-u>` / `<C-d>`|プレビューウィンドウのスクロール|
+|`<Esc>`|終了|
+|`<C-u>/<C-d>`|プレビューを上下スクロール|
 
-> プロジェクトごとに頻繁に使うピッカーは `<leader>f` 系にマッピングすると便利。
+---
 
-### LSP / 診断 / フォーマット / Lint
+## 3. LSP / 診断 / フォーマット / Lint
 
-- 共通キーマップ（バッファローカル）
+### 3-1. キーマップ（バッファローカル）
 
-| キー | 動作 |
+| キー | 機能 |
 |------|------|
 |`gd`|定義へジャンプ|
 |`K`|ホバードキュメント|
-|`<leader>rn`|シンボル名変更|
+|`<leader>rn`|リネーム|
 |`<leader>ca`|コードアクション|
-|`[d` / `]d`|前 / 次の Diagnostic へ|
-|`<leader>e`|カーソル位置の Diagnostic をポップアップ|
-|`<leader>q`|バッファ Diagnostic を loclist に送る|
+|`[d` / `]d`|前 / 次の Diagnostic|
+|`<leader>e`|カーソル Diagnostic をポップアップ|
+|`<leader>q`|Loclist へ Diagnostics 送信|
 
-#### Diagnostic ポップアップ自動表示
-カーソル停止後 **400 ms** で `vim.diagnostic.open_float()` が走ります。うるさい場合は
+> **自動ポップアップ**
+> カーソル停止 400 ms で `vim.diagnostic.open_float()` が表示。
+> 無効化する場合は
+> ```lua
+> vim.diagnostic.config({ float = { focusable = false } })
+> ```
+
+---
+
+### 3-2. フォーマッター (conform.nvim)
+
+| Filetype | 使用ツール |
+|----------|-----------|
+|Python|`ruff_format` → `black`|
+|Lua|`stylua`|
+|C/C++|`clang-format`|
+|Go|`goimports`|
+|Rust|`rustfmt`|
+|JS/TS|`prettierd`|
+|その他|`trim_whitespace`|
+
+*保存時に自動実行*（`format_on_save = true`）。
+手動: `:lua require('conform').format()`
+状態確認: `:ConformInfo`
+
+---
+
+### 3-3. リンター (nvim-lint)
+
+| Filetype | Linter (PATH 必須) |
+|----------|-------------------|
+|Python|`ruff`|
+|Lua|`luacheck`|
+|C/C++|`clang-tidy` ← Mason未収録|
+|Go|`golangci-lint`|
+|Rust|`clippy` ← `rustup component add clippy`|
+|JS/TS|`eslint_d`|
+
+`BufWritePost` / `BufReadPost` で自動。
+手動: `:lua require('lint').try_lint()`
+
+---
+
+### 3-4. 外部ツール管理
+
+| 目的 | コマンド |
+|------|---------|
+|Mason UI|`:Mason`|
+|ツール一括 Install|起動時自動 / `:MasonToolsInstall`|
+|ツール更新|`:MasonToolsUpdate`|
+
+---
+
+### 4. nvim-cmp + LuaSnip — 補完 & スニペット
+
+| キー | 動作 |
+|------|------|
+|`<C-n>/<C-p>`|次 / 前候補|
+|`<C-Space>`|候補メニュー表示|
+|`<CR>`|確定 (選択無しでも挿入)|
+|`<Tab>/<S-Tab>`|候補選択 or スニペットジャンプ|
+|`<Tab>` (行頭)|スニペット展開|
+
+**スニペットの追加**
 
 ```lua
-vim.diagnostic.config({ float = { focusable = false } })
+-- ~/.config/nvim/snippets/python/print.lua
+return {
+  s("pf", fmt("print({})", { i(0) })),
+}
+
 
