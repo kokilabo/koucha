@@ -112,3 +112,23 @@ mv [Ctrl + T] → 移動元のファイルを選択
 
 > プロジェクトごとに頻繁に使うピッカーは `<leader>f` 系にマッピングすると便利。
 
+### LSP / 診断 / フォーマット / Lint
+
+- 共通キーマップ（バッファローカル）
+
+| キー | 動作 |
+|------|------|
+|`gd`|定義へジャンプ|
+|`K`|ホバードキュメント|
+|`<leader>rn`|シンボル名変更|
+|`<leader>ca`|コードアクション|
+|`[d` / `]d`|前 / 次の Diagnostic へ|
+|`<leader>e`|カーソル位置の Diagnostic をポップアップ|
+|`<leader>q`|バッファ Diagnostic を loclist に送る|
+
+#### Diagnostic ポップアップ自動表示
+カーソル停止後 **400 ms** で `vim.diagnostic.open_float()` が走ります。うるさい場合は
+
+```lua
+vim.diagnostic.config({ float = { focusable = false } })
+
