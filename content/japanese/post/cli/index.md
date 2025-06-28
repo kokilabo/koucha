@@ -14,82 +14,89 @@ tags:
 ## 概要
 CLIツールのドキュメント（随時追加予定）
 
-## fd
+## 🚀 fd — Simple · Fast · User-friendly `find` 代替
 
-findの代替としてシンプル、高速、使いやすい
+| 要点 | 内容 |
+|------|------|
+| 基本構文 | <code>fd&nbsp;[PATTERN]&nbsp;[PATH]&nbsp;[OPTIONS]</code> |
+| デフォルト | PATTERN は **正規表現**・PATH 省略時は **カレントディレクトリ** |
+| 特徴 | デフォルトで **隠しファイル除外**・**シンタックスカラー**・マルチスレッド検索 |
 
-```bash
-# 基本構文
-fd [PATTERN] [PATH] [OPTIONS]
-```
-PATTERN: 検索したいファイル名や一部の文字列（デフォルトは正規表現）
+### 🔑 よく使う例
 
-PATH: 検索対象のディレクトリ（省略時はカレントディレクトリ）
+| 目的 | コマンド |
+|------|---------|
+|ファイル名に `hello` を含むものを検索|`fd hello`|
+|ホーム直下から `config` を検索|`fd config ~`|
+|拡張子 `.txt` を検索|`fd '.txt$'`|
 
-OPTIONS: 各種オプション（隠しファイル表示など）
+<details><summary>📜 オプション早見表</summary>
 
-```bash
-#名前で検索
-fd hello
+| オプション | 意味 |
+|-----------|------|
+|`-H / --hidden`|隠しファイルも対象|
+|`-I`|`.gitignore` を無視|
+|`-t f / d`|ファイル / ディレクトリ限定|
+|`-e <ext>`|拡張子で検索（例 `-e rs`）|
+|`-x <cmd> {}`|見つかったファイルにコマンド適用|
 
-#特定の場所から検索(homeディレクトリから)
-fd config ~
+</details>
 
-#拡張子で探す
-fd .txt
+## 🚀 fd — Simple · Fast · User-friendly `find` 代替
 
-```
-補足
-パスを含めない場合現在いるディレクトリから探索を開始する
+| 基本構文 | <code>fd&nbsp;[PATTERN]&nbsp;[PATH]&nbsp;[OPTIONS]</code> |
+|----------|----------------------------------------------------------|
+| デフォルト | PATTERN は **正規表現** / PATH 省略で **カレント dir** |
+| 特徴 | 隠しファイル除外・シンタックスカラー・マルチスレッド検索 |
 
-```bash
-#以下のようにオプションをfdの直後に配置してもいける
-fd [OPTIONS] [PATTERN] [PATH]
+### 🔑 代表例
 
-```
+| 目的 | コマンド |
+|------|---------|
+|`hello` を含むファイル | `fd hello` |
+|ホーム直下から `config` 検索 | `fd config ~` |
+|拡張子 `.txt` を検索 | `fd '.txt$'` |
 
-## fzf
+<details><summary>📜 主なオプション</summary>
 
-### 基礎
+| オプション | 意味 |
+|-----------|------|
+|`-H / --hidden`|隠しファイルも対象|
+|`-I`| `.gitignore` 無視|
+|`-t f / -t d`|ファイル / ディレクトリのみ|
+|`-e <ext>`|拡張子検索（例 `-e rs`）|
+|`-x <cmd> {}`|結果にコマンド適用|
 
-```bash
-# リストから選択
-cat list.txt | fzf
+</details>
 
-# コマンド履歴から選ぶ
-history | fzf
+> **順序は自由** — `fd -H config ~` のように OPTION を前にしても OK。
 
-# Git 管理下のファイルを検索
-git ls-files | fzf
+---
 
-# プロセスから選択
-ps aux | fzf
-```
+## ⚡ fzf — Anything-to-Anything Fuzzy Finder
 
-### キーバインド一覧
-- `Ctrl + T`：ファイル選択 → コマンドラインにパスを挿入
-- `Ctrl + R`：履歴検索 → コマンドを貼り付け
-- `Alt + C`：ディレクトリ選択 → `cd` で移動
+### 1️⃣ 基礎コマンド
 
+| 目的 | コマンド例 |
+|------|-----------|
+|テキストリストから選択|`cat list.txt \| fzf`|
+|履歴検索|`history \| fzf`|
+|Git 管理下ファイルを検索|`git ls-files \| fzf`|
+|プロセス選択|`ps aux \| fzf`|
 
-### 応用：fd を使った Ctrl+T カスタム
-```sh
-# `~/.zshrc` に追加
+### 2️⃣ キーバインド（シェル統合）
+
+| キー | デフォルト動作 |
+|------|---------------|
+|<kbd>Ctrl T</kbd>|ファイル選択 → パスを挿入|
+|<kbd>Ctrl R</kbd>|履歴検索 → コマンド貼り付け|
+|<kbd>Alt C</kbd>|ディレクトリ選択 → `cd`|
+
+### 3️⃣ カスタム：fd を使う <kbd>Ctrl T</kbd>
+
+```zsh
+# ~/.zshrc
 export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git'
-```
-
-- `Ctrl + T` で `.git` を除く全ファイルを `fzf` で選べる
-- 隠しファイル（.dotfiles）も対象に
-- `fd` を使うことで高速な検索が可能
-
-### 使用例
-```sh
-vim [Ctrl + T] → ファイル選択 → Vimで開く
-
-cp [Ctrl + T] → コピー元のファイルを選択
-
-mv [Ctrl + T] → 移動元のファイルを選択
-```
 
 ## 🚀 Neovim
 <kbd>Leader</kbd> = <kbd>Space</kbd>（半角スペース） — 主要キーバインド一覧
