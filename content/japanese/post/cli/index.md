@@ -91,15 +91,12 @@ cp [Ctrl + T] → コピー元のファイルを選択
 mv [Ctrl + T] → 移動元のファイルを選択
 ```
 
-## neovim
-個人的に多用しているキーバインドや特定のプラグインの用途に限定、それ以外は他のサイトを参照
-
-# 🚀 Neovim Shortcut Quick Sheet
+## 🚀 Neovim
 <kbd>Leader</kbd> = <kbd>Space</kbd>（半角スペース） — 主要キーバインド一覧
 
 ---
 
-## 🔍 Telescope — 検索
+### 🔍 Telescope — 検索
 | キー | アクション |
 |------|-----------|
 | <kbd>Leader f f</kbd> | ファイル検索 |
@@ -118,7 +115,7 @@ mv [Ctrl + T] → 移動元のファイルを選択
 
 ---
 
-## 🧠 LSP — コードナビ & 診断
+### 🧠 LSP — コードナビ & 診断
 | キー | アクション |
 |------|-----------|
 | <kbd>g d</kbd> | 定義へジャンプ |
@@ -131,7 +128,7 @@ mv [Ctrl + T] → 移動元のファイルを選択
 
 ---
 
-## 🌳 Treesitter
+### 🌳 Treesitter
 | キー | アクション |
 |------|-----------|
 | <kbd>g n n</kbd> | 増分選択開始 |
@@ -140,7 +137,7 @@ mv [Ctrl + T] → 移動元のファイルを選択
 
 ---
 
-## 🔤 nvim-cmp / LuaSnip
+### 🔤 nvim-cmp / LuaSnip
 | キー | アクション |
 |------|-----------|
 | <kbd>Ctrl Space</kbd> | 補完ポップアップ |
