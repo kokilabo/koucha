@@ -67,7 +67,6 @@ CLIツールのドキュメント（随時追加予定）
 
 ### 3️⃣ カスタム：fd を使う <kbd>Ctrl T</kbd>
 
-```zsh
 # ~/.zshrc
 export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git'
 
@@ -124,4 +123,3 @@ export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git'
 | <kbd>Ctrl n / Ctrl p</kbd> | 次 / 前候補 |
 | <kbd>Enter</kbd> | 候補確定 |
 | <kbd>Tab / Shift Tab</kbd> | 候補ナビ or スニペットジャンプ |
-
