@@ -14,33 +14,6 @@ tags:
 ## 概要
 CLIツールのドキュメント（随時追加予定）
 
-## 🚀 fd — Simple · Fast · User-friendly `find` 代替
-
-| 要点 | 内容 |
-|------|------|
-| 基本構文 | <code>fd&nbsp;[PATTERN]&nbsp;[PATH]&nbsp;[OPTIONS]</code> |
-| デフォルト | PATTERN は **正規表現**・PATH 省略時は **カレントディレクトリ** |
-| 特徴 | デフォルトで **隠しファイル除外**・**シンタックスカラー**・マルチスレッド検索 |
-
-### 🔑 よく使う例
-
-| 目的 | コマンド |
-|------|---------|
-|ファイル名に `hello` を含むものを検索|`fd hello`|
-|ホーム直下から `config` を検索|`fd config ~`|
-|拡張子 `.txt` を検索|`fd '.txt$'`|
-
-<details><summary>📜 オプション早見表</summary>
-
-| オプション | 意味 |
-|-----------|------|
-|`-H / --hidden`|隠しファイルも対象|
-|`-I`|`.gitignore` を無視|
-|`-t f / d`|ファイル / ディレクトリ限定|
-|`-e <ext>`|拡張子で検索（例 `-e rs`）|
-|`-x <cmd> {}`|見つかったファイルにコマンド適用|
-
-</details>
 
 ## 🚀 fd — Simple · Fast · User-friendly `find` 代替
 
