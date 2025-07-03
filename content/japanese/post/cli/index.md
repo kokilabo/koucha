@@ -56,6 +56,7 @@ CLIツールのドキュメント（随時追加予定）
 |履歴検索|`history \| fzf`|
 |Git 管理下ファイルを検索|`git ls-files \| fzf`|
 |プロセス選択|`ps aux \| fzf`|
+|クリップボードへ送る|`some_command \| fzf \| pbcopy`|
 
 ### 2️⃣ キーバインド（シェル統合）
 
@@ -72,6 +73,20 @@ export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 ## 🚀 Neovim
 <kbd>Leader</kbd> = <kbd>Space</kbd>（半角スペース） — 主要キーバインド一覧
+
+---
+
+### ⚙️ lazy.nvim — プラグイン管理
+
+| キー / コマンド                | アクション                                             |
+|-------------------------------|--------------------------------------------------------|
+| <kbd>:Lazy</kbd>              | プラグインの状態を UI で確認・操作                     |
+| <kbd>:Lazy sync</kbd>         | 設定と同期（install / update / clean 全部）           |
+| <kbd>:Lazy update</kbd>       | プラグインのアップデートのみ実行                       |
+| <kbd>:Lazy install</kbd>      | 未インストールのプラグインを導入                       |
+| <kbd>:Lazy clean</kbd>        | 不要なプラグインを削除                                 |
+| <kbd>:Lazy check</kbd>        | アップデートがあるか確認（更新はしない）               |
+| <kbd>:Lazy restore</kbd>      | lockfile に記録された状態に復元                        |
 
 ---
 
