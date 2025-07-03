@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web3 on Koucha</title><link>https://kokilabo.github.io/koucha/categories/web3/</link><description>Recent content in Web3 on Koucha</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 03 Jun 2025 00:46:19 +0900</lastBuildDate><atom:link href="https://kokilabo.github.io/koucha/categories/web3/index.xml" rel="self" type="application/rss+xml"/><item><title>Ethereumとその他周辺技術・概念についてのメモ</title><link>https://kokilabo.github.io/koucha/p/ethereum%E3%81%A8%E3%81%9D%E3%81%AE%E4%BB%96%E5%91%A8%E8%BE%BA%E6%8A%80%E8%A1%93%E6%A6%82%E5%BF%B5%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%83%A1%E3%83%A2/</link><pubDate>Tue, 03 Jun 2025 00:46:19 +0900</pubDate><guid>https://kokilabo.github.io/koucha/p/ethereum%E3%81%A8%E3%81%9D%E3%81%AE%E4%BB%96%E5%91%A8%E8%BE%BA%E6%8A%80%E8%A1%93%E6%A6%82%E5%BF%B5%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%83%A1%E3%83%A2/</guid><description>&lt;p>※これは個人的なメモです&lt;/p>
+&lt;h2 id="概要">概要
+&lt;/h2>&lt;p>この記事ではEthereumについて学んだことをまとめる&lt;/p>
+&lt;h2 id="ethereumとは">ethereumとは
+&lt;/h2>&lt;p>イーサリアムのプロトコルが支える何千ものアプリやブロックチェーンのための主要プラットフォーム&lt;/p>
+&lt;h2 id="コンセンサスアルゴリズムの変更powとpos">コンセンサスアルゴリズムの変更：PoWとPoS
+&lt;/h2>&lt;p>PoW(Proof of Work)→PoS(Proof of Stake)に移行（2022年9月15日）→エネルギー消費量を99.95%削減&lt;/p>
+&lt;h3 id="pow">PoW
+&lt;/h3>&lt;p>代表例：ビットコイン、イーサリアム（Merge以前）&lt;/p>
+&lt;p>攻撃者は計算能力を多く持っていた場合、Ethereumのネットワークを支配することができる→51%攻撃&lt;/p>
+&lt;h3 id="pos">PoS
+&lt;/h3>&lt;p>代表例：イーサリアム（Merge以降）&lt;/p>
+&lt;p>攻撃者が資産を多く持っていた場合スラッシングの仕組みにより経済合理性崩壊&lt;/p>
+&lt;p>スラッシング→不正行為をするとステークしたコインが没収される&lt;/p>
+&lt;h2 id="refi">ReFi
+&lt;/h2>&lt;p>ReFi（リファイ）」= Regenerative Finance（再生型金融）&lt;/p>
+&lt;p>2015年に経済学者のジョン・フラートン氏（John Fullerton）が提唱した「Regenerative Capitalism（再生資本主義）」を基にしている。&lt;/p>
+&lt;p>ざっくりいうとお金を増やすだけじゃなく、環境や社会にプラスの影響を与える金融の形&lt;/p>
+&lt;p>環境プロジェクトの進捗管理（植林の本数、CO2排出量の削減量など）の透明化
+環境問題→外の世界の情報をとってくる必要ある→オラクル問題と関係あり&lt;/p>
+&lt;h3 id="オラクル問題どうする">オラクル問題どうする？
+&lt;/h3>&lt;ul>
+&lt;li>IoTとか衛生データ&lt;/li>
+&lt;li>第三者機関による監査&lt;/li>
+&lt;li>分散型オラクル（Chainlinkなど）&lt;/li>
+&lt;/ul>
+&lt;h2 id="参考資料">参考資料
+&lt;/h2>&lt;p>&lt;a class="link" href="https://ethereum.org/ja/" target="_blank" rel="noopener"
+>Ethereum.org&lt;/a>&lt;/p></description></item></channel></rss>
