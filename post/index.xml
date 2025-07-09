@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Koucha</title><link>https://kokilabo.github.io/koucha/post/</link><description>Recent content in Posts on Koucha</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 09 Jul 2025 17:46:00 +0900</lastBuildDate><atom:link href="https://kokilabo.github.io/koucha/post/index.xml" rel="self" type="application/rss+xml"/><item><title>便利な検索演算子</title><link>https://kokilabo.github.io/koucha/p/%E4%BE%BF%E5%88%A9%E3%81%AA%E6%A4%9C%E7%B4%A2%E6%BC%94%E7%AE%97%E5%AD%90/</link><pubDate>Wed, 09 Jul 2025 17:46:00 +0900</pubDate><guid>https://kokilabo.github.io/koucha/p/%E4%BE%BF%E5%88%A9%E3%81%AA%E6%A4%9C%E7%B4%A2%E6%BC%94%E7%AE%97%E5%AD%90/</guid><description>&lt;h2 id="概要">概要
+&lt;/h2>&lt;p>googleで使える検索演算子をまとめる。&lt;/p>
+&lt;h3 id="-基本的な検索演算子">🔍 基本的な検索演算子
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>演算子&lt;/th>
+&lt;th>内容&lt;/th>
+&lt;th>例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>&amp;quot;&amp;quot;&lt;/code>&lt;/td>
+&lt;td>完全一致検索&lt;/td>
+&lt;td>&lt;code>&amp;quot;検索演算子 一覧&amp;quot;&lt;/code> → その語順通りの結果だけ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-&lt;/code>&lt;/td>
+&lt;td>除外検索&lt;/td>
+&lt;td>&lt;code>猫 -犬&lt;/code> → 犬を含まない猫の情報&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>site:&lt;/code>&lt;/td>
+&lt;td>特定サイト内検索&lt;/td>
+&lt;td>&lt;code>site:nhk.or.jp 地震&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>intitle:&lt;/code>&lt;/td>
+&lt;td>タイトルに含む&lt;/td>
+&lt;td>&lt;code>intitle:Python&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>inurl:&lt;/code>&lt;/td>
+&lt;td>URLに含む&lt;/td>
+&lt;td>&lt;code>inurl:login&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>filetype:&lt;/code>&lt;/td>
+&lt;td>ファイル形式指定&lt;/td>
+&lt;td>&lt;code>filetype:pdf 就職活動&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>OR&lt;/code>（大文字）&lt;/td>
+&lt;td>いずれかを含む&lt;/td>
+&lt;td>&lt;code>Python OR JavaScript&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>*&lt;/code>&lt;/td>
+&lt;td>ワイルドカード&lt;/td>
+&lt;td>&lt;code>&amp;quot;AI * 影響&amp;quot;&lt;/code> → 間に何か入るパターンを検索&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>..&lt;/code>&lt;/td>
+&lt;td>数値範囲&lt;/td>
+&lt;td>&lt;code>iPhone 10..14&lt;/code> → iPhone10〜14の範囲検索&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="-応用裏技っぽい使い方">💡 応用・裏技っぽい使い方
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>技&lt;/th>
+&lt;th>内容&lt;/th>
+&lt;th>例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>related:&lt;/code>&lt;/td>
+&lt;td>関連サイト表示&lt;/td>
+&lt;td>&lt;code>related:youtube.com&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>cache:&lt;/code>&lt;/td>
+&lt;td>キャッシュページ表示&lt;/td>
+&lt;td>&lt;code>cache:example.com&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>&amp;quot;検索語1&amp;quot; AROUND(N) &amp;quot;検索語2&amp;quot;&lt;/code>&lt;/td>
+&lt;td>近接検索（N語以内）&lt;/td>
+&lt;td>&lt;code>&amp;quot;AI&amp;quot; AROUND(3) &amp;quot;倫理&amp;quot;&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>define:&lt;/code>&lt;/td>
+&lt;td>単語の定義を検索&lt;/td>
+&lt;td>&lt;code>define:machine learning&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>before:&lt;/code> / &lt;code>after:&lt;/code>&lt;/td>
+&lt;td>日付で絞る（Google News等）&lt;/td>
+&lt;td>&lt;code>ウクライナ after:2023-01-01&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr></description></item><item><title>Tmuxのメモ</title><link>https://kokilabo.github.io/koucha/p/tmux%E3%81%AE%E3%83%A1%E3%83%A2/</link><pubDate>Thu, 26 Jun 2025 01:22:47 +0900</pubDate><guid>https://kokilabo.github.io/koucha/p/tmux%E3%81%AE%E3%83%A1%E3%83%A2/</guid><description>&lt;p>※これは個人的なメモです&lt;/p>
+&lt;h1 id="-tmux-メモ">📚 tmux メモ
+&lt;/h1>&lt;p>tmuxはターミナル上で複数の作業空間（セッション・ウィンドウ・ペイン）を効率的に扱うためのツールです。&lt;/p>
+&lt;hr>
+&lt;h2 id="-概要構造セッションウィンドウペイン">🧠 概要構造（セッション・ウィンドウ・ペイン）
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">セッション1（作業A）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├─ ウィンドウ0（エディタ）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └─ ペイン1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├─ ウィンドウ1（サーバー）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├─ ペイン1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └─ ペイン2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">セッション2（作業B）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├─ ウィンドウ0（デバッグ）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └─ ペイン1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h2 id="-セッション操作">📌 セッション操作
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># セッション一覧を表示&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tmux ls
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># セッションの新規作成（無名）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tmux
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># セッションの新規作成（名前つき）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tmux new -s session-name
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># セッションに接続（アタッチ）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tmux attach -t session-name
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tmux a -t session-name &lt;span class="c1"># 省略形&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># セッションの終了（中で exit または Ctrl-D）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># または、別セッションから強制終了&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tmux kill-session -t session-name
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h2 id="-ウィンドウ操作prefix--ctrl-b">🪟 ウィンドウ操作（prefix = Ctrl-b）
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 新しいウィンドウを作成&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;prefix&amp;gt; c
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 次のウィンドウへ移動&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;prefix&amp;gt; n
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 前のウィンドウへ移動&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;prefix&amp;gt; p
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># ウィンドウ番号で直接移動（例：ウィンドウ0）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;prefix&amp;gt; &lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># ウィンドウの名前を変更&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;prefix&amp;gt; ,
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h2 id="-画面分割ペイン操作">📐 画面分割（ペイン操作）
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 横に分割（上下に並べる）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;prefix&amp;gt; &lt;span class="s2">&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"># 縦に分割（左右に並べる）
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;lt;prefix&amp;gt; %
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"># ペイン間を移動（方向キー）
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;lt;prefix&amp;gt; ↑ ↓ ← →
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h2 id="-設定ファイルの再読み込み">🔁 設定ファイルの再読み込み
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># .tmux.conf を編集した後に反映&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tmux source-file ~/.tmux.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h2 id="-プラグイン">🧩 プラグイン
+&lt;/h2>&lt;h3 id="extrakto">Extrakto
+&lt;/h3>&lt;p>Extraktoは、画面出力からパス・URLなどを抽出し、&lt;code>fzf&lt;/code> で操作できるプラグイン。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Extrakto を起動（デフォルト）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;prefix&amp;gt; Tab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h2 id="-小技tips">💡 小技（Tips）
+&lt;/h2>&lt;h3 id="-出力内容のコピー">🔍 出力内容のコピー
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># コピー（スクロール）モードに入る&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;lt;prefix&amp;gt; &lt;span class="o">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># カーソルで選択範囲を移動&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">↑ ↓ ← → または Vimモードで h j k l
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 選択開始&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">スペースキー
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 選択終了してコピー&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Enter
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="-パス検索の一例">🔎 パス検索の一例
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">fd . &lt;span class="p">|&lt;/span> grep &lt;span class="s1">&amp;#39;some/path/pattern&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>CLIドキュメント</title><link>https://kokilabo.github.io/koucha/p/cli%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/</link><pubDate>Wed, 25 Jun 2025 01:22:01 +0900</pubDate><guid>https://kokilabo.github.io/koucha/p/cli%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/</guid><description>&lt;p>※これは個人的なメモです。&lt;/p>
+&lt;h2 id="概要">概要
+&lt;/h2>&lt;p>CLIツールのドキュメント（随時追加予定）&lt;/p>
+&lt;h2 id="-fd--simple--fast--user-friendly-find-代替">🚀 fd — Simple · Fast · User-friendly &lt;code>find&lt;/code> 代替
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>基本構文&lt;/th>
+&lt;th>&lt;code>fd [PATTERN] [PATH] [OPTIONS]&lt;/code>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>デフォルト&lt;/td>
+&lt;td>PATTERN は &lt;strong>正規表現&lt;/strong> / PATH 省略で &lt;strong>カレント dir&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>特徴&lt;/td>
+&lt;td>隠しファイル除外・シンタックスカラー・マルチスレッド検索&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="-代表例">🔑 代表例
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>目的&lt;/th>
+&lt;th>コマンド&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>hello&lt;/code> を含むファイル&lt;/td>
+&lt;td>&lt;code>fd hello&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ホーム直下から &lt;code>config&lt;/code> 検索&lt;/td>
+&lt;td>&lt;code>fd config ~&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>拡張子 &lt;code>.txt&lt;/code> を検索&lt;/td>
+&lt;td>&lt;code>fd '.txt$'&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;details>&lt;summary>📜 主なオプション&lt;/summary>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>オプション&lt;/th>
+&lt;th>意味&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>-H / --hidden&lt;/code>&lt;/td>
+&lt;td>隠しファイルも対象&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-I&lt;/code>&lt;/td>
+&lt;td>&lt;code>.gitignore&lt;/code> 無視&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-t f / -t d&lt;/code>&lt;/td>
+&lt;td>ファイル / ディレクトリのみ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-e &amp;lt;ext&amp;gt;&lt;/code>&lt;/td>
+&lt;td>拡張子検索（例 &lt;code>-e rs&lt;/code>）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-x &amp;lt;cmd&amp;gt; {}&lt;/code>&lt;/td>
+&lt;td>結果にコマンド適用&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/details>
+&lt;blockquote>
+&lt;p>&lt;strong>順序は自由&lt;/strong> — &lt;code>fd -H config ~&lt;/code> のように OPTION を前にしても OK。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="-fzf--anything-to-anything-fuzzy-finder">⚡ fzf — Anything-to-Anything Fuzzy Finder
+&lt;/h2>&lt;h3 id="1-基礎コマンド">1️⃣ 基礎コマンド
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>目的&lt;/th>
+&lt;th>コマンド例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>テキストリストから選択&lt;/td>
+&lt;td>&lt;code>cat list.txt | fzf&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>履歴検索&lt;/td>
+&lt;td>&lt;code>history | fzf&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Git 管理下ファイルを検索&lt;/td>
+&lt;td>&lt;code>git ls-files | fzf&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>プロセス選択&lt;/td>
+&lt;td>&lt;code>ps aux | fzf&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>クリップボードへ送る&lt;/td>
+&lt;td>&lt;code>some_command | fzf | pbcopy&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="2-キーバインドシェル統合">2️⃣ キーバインド（シェル統合）
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>キー&lt;/th>
+&lt;th>デフォルト動作&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;kbd>Ctrl T&lt;/kbd>&lt;/td>
+&lt;td>ファイル選択 → パスを挿入&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Ctrl R&lt;/kbd>&lt;/td>
+&lt;td>履歴検索 → コマンド貼り付け&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Alt C&lt;/kbd>&lt;/td>
+&lt;td>ディレクトリ選択 → &lt;code>cd&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="3-カスタムfd-を使う-ctrl-t">3️⃣ カスタム：fd を使う &lt;kbd>Ctrl T&lt;/kbd>
+&lt;/h3>&lt;h1 id="zshrc">~/.zshrc
+&lt;/h1>&lt;p>export FZF_CTRL_T_COMMAND=&amp;lsquo;fd &amp;ndash;type f &amp;ndash;hidden &amp;ndash;follow &amp;ndash;exclude .git&amp;rsquo;&lt;/p>
+&lt;h2 id="-neovim">🚀 Neovim
+&lt;/h2>&lt;p>&lt;kbd>Leader&lt;/kbd> = &lt;kbd>Space&lt;/kbd>（半角スペース） — 主要キーバインド一覧&lt;/p>
+&lt;hr>
+&lt;h3 id="-lazynvim--プラグイン管理">⚙️ lazy.nvim — プラグイン管理
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>キー / コマンド&lt;/th>
+&lt;th>アクション&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;kbd>:Lazy&lt;/kbd>&lt;/td>
+&lt;td>プラグインの状態を UI で確認・操作&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>:Lazy sync&lt;/kbd>&lt;/td>
+&lt;td>設定と同期（install / update / clean 全部）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>:Lazy update&lt;/kbd>&lt;/td>
+&lt;td>プラグインのアップデートのみ実行&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>:Lazy install&lt;/kbd>&lt;/td>
+&lt;td>未インストールのプラグインを導入&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>:Lazy clean&lt;/kbd>&lt;/td>
+&lt;td>不要なプラグインを削除&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>:Lazy check&lt;/kbd>&lt;/td>
+&lt;td>アップデートがあるか確認（更新はしない）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>:Lazy restore&lt;/kbd>&lt;/td>
+&lt;td>lockfile に記録された状態に復元&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="-telescope--検索">🔍 Telescope — 検索
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>キー&lt;/th>
+&lt;th>アクション&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;kbd>Leader f f&lt;/kbd>&lt;/td>
+&lt;td>ファイル検索&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Leader f g&lt;/kbd>&lt;/td>
+&lt;td>全文 Grep&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Leader f b&lt;/kbd>&lt;/td>
+&lt;td>バッファ一覧&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Leader f h&lt;/kbd>&lt;/td>
+&lt;td>ヘルプ検索&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;details>&lt;summary>📜 Telescope 中の操作&lt;/summary>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>キー&lt;/th>
+&lt;th>動作&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;kbd>Esc&lt;/kbd>&lt;/td>
+&lt;td>終了&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Ctrl u / Ctrl d&lt;/kbd>&lt;/td>
+&lt;td>プレビュー上下スクロール&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/details>
+&lt;hr>
+&lt;h3 id="-lsp--コードナビ--診断">🧠 LSP — コードナビ &amp;amp; 診断
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>キー&lt;/th>
+&lt;th>アクション&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;kbd>g d&lt;/kbd>&lt;/td>
+&lt;td>定義へジャンプ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>K&lt;/kbd>&lt;/td>
+&lt;td>ホバー情報&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Leader r n&lt;/kbd>&lt;/td>
+&lt;td>リネーム&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Leader c a&lt;/kbd>&lt;/td>
+&lt;td>コードアクション&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>] d&lt;/kbd> / &lt;kbd>[ d&lt;/kbd>&lt;/td>
+&lt;td>次 / 前の Diagnostic&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Leader e&lt;/kbd>&lt;/td>
+&lt;td>Diagnostic ポップアップ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Leader q&lt;/kbd>&lt;/td>
+&lt;td>Diagnostic → loclist&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="-treesitter">🌳 Treesitter
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>キー&lt;/th>
+&lt;th>アクション&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;kbd>g n n&lt;/kbd>&lt;/td>
+&lt;td>増分選択開始&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>g r n / g r m&lt;/kbd>&lt;/td>
+&lt;td>選択拡張 / 縮小&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>g r c&lt;/kbd>&lt;/td>
+&lt;td>スコープ単位拡張&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="-nvim-cmp--luasnip">🔤 nvim-cmp / LuaSnip
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>キー&lt;/th>
+&lt;th>アクション&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;kbd>Ctrl Space&lt;/kbd>&lt;/td>
+&lt;td>補完ポップアップ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Ctrl n / Ctrl p&lt;/kbd>&lt;/td>
+&lt;td>次 / 前候補&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Enter&lt;/kbd>&lt;/td>
+&lt;td>候補確定&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;kbd>Tab / Shift Tab&lt;/kbd>&lt;/td>
+&lt;td>候補ナビ or スニペットジャンプ&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Hugoで使うコマンド</title><link>https://kokilabo.github.io/koucha/p/hugo%E3%81%A7%E4%BD%BF%E3%81%86%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89/</link><pubDate>Tue, 03 Jun 2025 18:15:46 +0900</pubDate><guid>https://kokilabo.github.io/koucha/p/hugo%E3%81%A7%E4%BD%BF%E3%81%86%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89/</guid><description>&lt;p>※これは個人メモです&lt;/p>
+&lt;h2 id="概要">概要
+&lt;/h2>&lt;p>ここではhugoで使うコマンドをまとめる&lt;/p>
+&lt;h2 id="コマンド">コマンド
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># ローカルでサーバーを起動&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo server -D
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 新しいポストを作成&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo new post/hello/index.md
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># ビルド&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Ethereumとその他周辺技術・概念についてのメモ</title><link>https://kokilabo.github.io/koucha/p/ethereum%E3%81%A8%E3%81%9D%E3%81%AE%E4%BB%96%E5%91%A8%E8%BE%BA%E6%8A%80%E8%A1%93%E6%A6%82%E5%BF%B5%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%83%A1%E3%83%A2/</link><pubDate>Tue, 03 Jun 2025 00:46:19 +0900</pubDate><guid>https://kokilabo.github.io/koucha/p/ethereum%E3%81%A8%E3%81%9D%E3%81%AE%E4%BB%96%E5%91%A8%E8%BE%BA%E6%8A%80%E8%A1%93%E6%A6%82%E5%BF%B5%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%83%A1%E3%83%A2/</guid><description>&lt;p>※これは個人的なメモです&lt;/p>
+&lt;h2 id="概要">概要
+&lt;/h2>&lt;p>この記事ではEthereumについて学んだことをまとめる&lt;/p>
+&lt;h2 id="ethereumとは">ethereumとは
+&lt;/h2>&lt;p>イーサリアムのプロトコルが支える何千ものアプリやブロックチェーンのための主要プラットフォーム&lt;/p>
+&lt;h2 id="コンセンサスアルゴリズムの変更powとpos">コンセンサスアルゴリズムの変更：PoWとPoS
+&lt;/h2>&lt;p>PoW(Proof of Work)→PoS(Proof of Stake)に移行（2022年9月15日）→エネルギー消費量を99.95%削減&lt;/p>
+&lt;h3 id="pow">PoW
+&lt;/h3>&lt;p>代表例：ビットコイン、イーサリアム（Merge以前）&lt;/p>
+&lt;p>攻撃者は計算能力を多く持っていた場合、Ethereumのネットワークを支配することができる→51%攻撃&lt;/p>
+&lt;h3 id="pos">PoS
+&lt;/h3>&lt;p>代表例：イーサリアム（Merge以降）&lt;/p>
+&lt;p>攻撃者が資産を多く持っていた場合スラッシングの仕組みにより経済合理性崩壊&lt;/p>
+&lt;p>スラッシング→不正行為をするとステークしたコインが没収される&lt;/p>
+&lt;h2 id="refi">ReFi
+&lt;/h2>&lt;p>ReFi（リファイ）」= Regenerative Finance（再生型金融）&lt;/p>
+&lt;p>2015年に経済学者のジョン・フラートン氏（John Fullerton）が提唱した「Regenerative Capitalism（再生資本主義）」を基にしている。&lt;/p>
+&lt;p>ざっくりいうとお金を増やすだけじゃなく、環境や社会にプラスの影響を与える金融の形&lt;/p>
+&lt;p>環境プロジェクトの進捗管理（植林の本数、CO2排出量の削減量など）の透明化
+環境問題→外の世界の情報をとってくる必要ある→オラクル問題と関係あり&lt;/p>
+&lt;h3 id="オラクル問題どうする">オラクル問題どうする？
+&lt;/h3>&lt;ul>
+&lt;li>IoTとか衛生データ&lt;/li>
+&lt;li>第三者機関による監査&lt;/li>
+&lt;li>分散型オラクル（Chainlinkなど）&lt;/li>
+&lt;/ul>
+&lt;h2 id="参考資料">参考資料
+&lt;/h2>&lt;p>&lt;a class="link" href="https://ethereum.org/ja/" target="_blank" rel="noopener"
+>Ethereum.org&lt;/a>&lt;/p></description></item><item><title>初めての投稿</title><link>https://kokilabo.github.io/koucha/p/%E5%88%9D%E3%82%81%E3%81%A6%E3%81%AE%E6%8A%95%E7%A8%BF/</link><pubDate>Tue, 27 May 2025 01:03:53 +0900</pubDate><guid>https://kokilabo.github.io/koucha/p/%E5%88%9D%E3%82%81%E3%81%A6%E3%81%AE%E6%8A%95%E7%A8%BF/</guid><description>&lt;h2 id="はじめまして">はじめまして
+&lt;/h2>&lt;p>hugoを使ってブログを作ってみた&lt;/p></description></item></channel></rss>
